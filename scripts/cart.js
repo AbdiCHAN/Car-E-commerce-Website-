@@ -1,3 +1,3 @@
-// cart.js - Abdirahman
+// cart.js - 
 // Logic to manage cart functionality
 

@@ -1,3 +1,3 @@
-// app.js - Mohammed Sharif
+// app.js - 
 // Logic to load and display cars dynamically
 

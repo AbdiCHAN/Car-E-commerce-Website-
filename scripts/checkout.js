@@ -1,3 +1,3 @@
-// checkout.js - Abdirahman
+// checkout.js - 
 // Fake checkout processor logic
 
