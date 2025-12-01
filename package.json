@@ -1,0 +1,21 @@
+{
+  "name": "car-e-commerce-website-",
+  "version": "1.0.0",
+  "description": "A beginner-friendly e-commerce website for buying and selling cars, built by a team of 10 software engineers. Features car listings, car details, shopping cart, and checkout functionality.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbdiCHAN/Car-E-commerce-Website-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AbdiCHAN/Car-E-commerce-Website-/issues"
+  },
+  "homepage": "https://github.com/AbdiCHAN/Car-E-commerce-Website-#readme"
+}
