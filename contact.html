@@ -1,16 +1,32 @@
-<!-- contact.html -  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DriveHub Motors | Contact Us</title>
-
-    <!-- CSS Files -->
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="mainbar.css">
+    <style>
+        /* fallback CSS */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #333; color: #fff; }
+        .navbar .logo-area img { height: 50px; margin-right: 10px; }
+        .navbar .nav-links { list-style: none; display: flex; gap: 1rem; }
+        .navbar .nav-links li a { color: #fff; text-decoration: none; }
+        .navbar .nav-links li a.active { text-decoration: underline; }
+        .hero-banner { position: relative; text-align: center; color: white; }
+        .hero-banner img { width: 100%; height: auto; display: block; }
+        .banner-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .contact-container { display: flex; flex-wrap: wrap; gap: 2rem; padding: 2rem; justify-content: center; }
+        .contact-form, .contact-info { flex: 1 1 400px; }
+        form { display: flex; flex-direction: column; gap: 1rem; }
+        input, textarea { padding: 0.5rem; font-size: 1rem; width: 100%; }
+        button { padding: 0.75rem; font-size: 1rem; background: #333; color: #fff; border: none; cursor: pointer; }
+        .map-placeholder img { width: 100%; height: auto; }
+        .portfolio-note { text-align: center; font-size: 0.85rem; margin: 2rem 0; color: #555; }
+        footer { background: #222; color: #fff; text-align: center; padding: 1rem; }
+    </style>
 </head>
-
 <body>
 
     <!-- Navbar -->
@@ -23,31 +39,30 @@
 
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="carlisting.html">Car Listing</a></li>
+                <li><a href="car-details.html">Car Details</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a class="active" href="contact.html">Contact</a></li>
-                <li><a href="#">Inventory</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Banner -->
     <section class="hero-banner">
-        <img src="https://via.placeholder.com/1200x350?text=Contact+DriveHub+Motors" 
-             alt="Contact DriveHub Motors Banner">
+        <img src="https://via.placeholder.com/1200x350?text=Contact+DriveHub+Motors" alt="Contact DriveHub Motors Banner">
         <div class="banner-text">
             <h2>Contact Us</h2>
         </div>
     </section>
 
-    <!-- Contact Layout -->
+    <!-- Contact Section -->
     <section class="contact-container">
-
-        <!-- Contact Form -->
         <div class="contact-form">
             <h2>Send Us a Message</h2>
-
             <form action="#" method="POST">
-
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" placeholder="John Doe" required>
 
@@ -64,19 +79,13 @@
             </form>
         </div>
 
-        <!-- Map & Support -->
         <div class="contact-info">
-
             <h2>Visit or Reach Us</h2>
-
             <div class="map-placeholder">
-                <img src="https://via.placeholder.com/500x350?text=Map+Placeholder" 
-                     alt="Map Placeholder">
+                <img src="https://via.placeholder.com/500x350?text=Map+Placeholder" alt="Map Placeholder">
             </div>
-
             <div class="support-details">
                 <h3>Support Contacts</h3>
-
                 <p><strong>Email:</strong> support@drivehubmotors.fake</p>
                 <p><strong>Phone:</strong> +254 701 234 567</p>
                 <p><strong>Office Address:</strong><br>
@@ -84,23 +93,16 @@
                     Nairobi, Kenya
                 </p>
             </div>
-
         </div>
-
     </section>
 
-    <!-- Portfolio Notice -->
     <p class="portfolio-note">
-        *This website is a group coding portfolio project created for learning purposes only.
-        All details, contacts, and images are placeholders.*
+        This website is a group coding portfolio project created for learning purposes only. All details, contacts, and images are placeholders.
     </p>
 
-    <!-- Footer -->
     <footer>
         <p>© 2025 DriveHub Motors — All Rights Reserved</p>
     </footer>
 
-</body>
-</html>
 </body>
 </html>
