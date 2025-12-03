@@ -1,3 +1,211 @@
-<!-- checkout.html -  -->
-<h1>Checkout Page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1>
+    </header>
 
+    <main>
+        <div>
+            <div>
+                <section>
+                    <h2>Billing Information</h2>
+                    <form>
+                        <fieldset>
+                            <legend>Personal Details</legend>
+                            <div>
+                                <label for="fullName">Full Name:</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                            
+                            <div>
+                                <label for="email">Email Address:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div>
+                                <label for="phone">Phone Number:</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>Address Details</legend>
+                            <div>
+                                <label for="address">Street Address:</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            
+                            <div>
+                                <label for="city">City:</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            
+                            <div>
+                                <label for="zipCode">ZIP Code:</label>
+                                <input type="text" id="zipCode" name="zipCode" required>
+                            </div>
+                        </fieldset>
+                    </form>
+                </section>
+
+                <section>
+                    <h2>Payment Details</h2>
+                    <form>
+                        <fieldset>
+                            <legend>Select Payment Method</legend>
+                            
+                            <div>
+                                <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" checked>
+                                <label for="creditCard">Credit/Debit Card</label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" id="mobileMoney" name="paymentMethod" value="mobileMoney">
+                                <label for="mobileMoney">Mobile Money</label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                                <label for="paypal">PayPal</label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset id="cardDetails">
+                            <legend>Card Information</legend>
+                            <div>
+                                <label for="cardNumber">Card Number:</label>
+                                <input type="text" id="cardNumber" name="cardNumber">
+                            </div>
+                            
+                            <div>
+                                <label for="expiryDate">Expiry Date:</label>
+                                <input type="text" id="expiryDate" name="expiryDate">
+                            </div>
+                            
+                            <div>
+                                <label for="cvv">CVV:</label>
+                                <input type="text" id="cvv" name="cvv">
+                            </div>
+                        </fieldset>
+
+                        <fieldset id="mobileMoneyDetails" style="display: none;">
+                            <legend>Mobile Money Details</legend>
+                            <div>
+                                <label for="mobileNumber">Mobile Number:</label>
+                                <input type="tel" id="mobileNumber" name="mobileNumber">
+                            </div>
+                        </fieldset>
+
+                        <fieldset id="paypalDetails" style="display: none;">
+                            <legend>PayPal Details</legend>
+                            <div>
+                                <label for="paypalEmail">Email or Username:</label>
+                                <input type="text" id="paypalEmail" name="paypalEmail">
+                            </div>
+                        </fieldset>
+                    </form>
+                </section>
+            </div>
+
+            <div>
+                <section>
+                    <h2>Order Summary</h2>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Land Cruiser V8</td>
+                                <td>$0.00</td>
+                                <td>1</td>
+                                <td>$0.00</td>
+                            </tr>
+                            <tr>
+                                <td>Mercedes GLE</td>
+                                <td>$0.00</td>
+                                <td>1</td>
+                                <td>$0.00</td>
+                            </tr>
+                            <tr>
+                                <td>Porsche 911</td>
+                                <td>$0.00</td>
+                                <td>1</td>
+                                <td>$0.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div>
+                        <div>
+                            <span>Subtotal:</span>
+                            <span>$0.00</span>
+                        </div>
+                        
+                        <div>
+                            <span>Shipping:</span>
+                            <span>$0.00</span>
+                        </div>
+                        
+                        <div>
+                            <span>Tax Estimate:</span>
+                            <span>$0.00</span>
+                        </div>
+                        
+                        <div>
+                            <strong>Final Total:</strong>
+                            <strong>$0.00</strong>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div>
+            <button type="submit">Confirm Order</button>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+            const cardDetails = document.getElementById('cardDetails');
+            const mobileMoneyDetails = document.getElementById('mobileMoneyDetails');
+            const paypalDetails = document.getElementById('paypalDetails');
+            
+            function showPaymentDetails() {
+                cardDetails.style.display = 'none';
+                mobileMoneyDetails.style.display = 'none';
+                paypalDetails.style.display = 'none';
+                
+                const selectedMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+                
+                if (selectedMethod === 'creditCard') {
+                    cardDetails.style.display = 'block';
+                } else if (selectedMethod === 'mobileMoney') {
+                    mobileMoneyDetails.style.display = 'block';
+                } else if (selectedMethod === 'paypal') {
+                    paypalDetails.style.display = 'block';
+                }
+            }
+            
+            paymentMethods.forEach(method => {
+                method.addEventListener('change', showPaymentDetails);
+            });
+            
+            showPaymentDetails();
+        });
+    </script>
+</body>
+</html>
