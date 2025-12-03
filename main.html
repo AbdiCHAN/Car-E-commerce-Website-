@@ -1,0 +1,263 @@
+<!-- This is the homepage: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriveHub Motors | Luxury Car Listings</title>
+  <link rel="stylesheet" href="cars.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-car"></i>
+          <div>
+            <h1>DriveHub <span>Motors</span></h1>
+            <p class="tagline">Luxury automotive excellence since 1995</p>
+          </div>
+        </div>
+        <div>
+          <p><i class="fas fa-phone-alt"></i> CONTACT</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Results Header -->
+    <div class="results-header">
+      <div>
+        <h2>Luxury Car Listings</h2>
+        <p class="results-count">Showing <span id="results-count">0</span> of 12 vehicles</p>
+      </div>
+      <div class="sort-options">
+        <span>Sort by:</span>
+        <select id="sort-by">
+          <option value="recommended">Recommended</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="year-new">Year: Newest First</option>
+          <option value="year-old">Year: Oldest First</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <!-- Filters Sidebar -->
+      <aside class="filters-sidebar">
+        <div class="filters-header">
+          <h2>Filter Vehicles</h2>
+          <button class="reset-filters" id="reset-filters">
+            <i class="fas fa-redo-alt"></i> Reset All
+          </button>
+        </div>
+
+        <!-- Price Filter -->
+        <div class="filter-group">
+          <div class="filter-title active-filter">
+            <span>Price Range</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="filter-content">
+            <div class="range-inputs">
+              <div class="range-input">
+                <span>$</span>
+                <input type="number" id="min-price" placeholder="Min" min="0" max="500000" value="0">
+              </div>
+              <div class="range-input">
+                <span>$</span>
+                <input type="number" id="max-price" placeholder="Max" min="0" max="500000" value="150000">
+              </div>
+            </div>
+            <input type="range" id="price-slider" min="0" max="500000" value="150000" step="10000" class="slider">
+          </div>
+        </div>
+
+        <!-- Brand Filter -->
+        <div class="filter-group">
+          <div class="filter-title active-filter">
+            <span>Brand</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="filter-content">
+            <div class="filter-option">
+              <input type="checkbox" id="brand-mercedes" checked>
+              <label for="brand-mercedes">Mercedes-Benz</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="brand-bmw" checked>
+              <label for="brand-bmw">BMW</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="brand-audi" checked>
+              <label for="brand-audi">Audi</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="brand-porsche" checked>
+              <label for="brand-porsche">Porsche</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="brand-jaguar" checked>
+              <label for="brand-jaguar">Jaguar</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="brand-lexus" checked>
+              <label for="brand-lexus">Lexus</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vehicle Type Filter -->
+        <div class="filter-group">
+          <div class="filter-title active-filter">
+            <span>Vehicle Type</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="filter-content">
+            <div class="filter-option">
+              <input type="checkbox" id="type-sedan" checked>
+              <label for="type-sedan">Sedan</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="type-suv" checked>
+              <label for="type-suv">SUV</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="type-coupe" checked>
+              <label for="type-coupe">Coupe</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="type-convertible" checked>
+              <label for="type-convertible">Convertible</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="type-sports" checked>
+              <label for="type-sports">Sports</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Year Filter -->
+        <div class="filter-group">
+          <div class="filter-title active-filter">
+            <span>Year</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="filter-content">
+            <div class="filter-option">
+              <input type="checkbox" id="year-2023" checked>
+              <label for="year-2023">2023-2024</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="year-2021" checked>
+              <label for="year-2021">2021-2022</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="year-2019" checked>
+              <label for="year-2019">2019-2020</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="year-2017" checked>
+              <label for="year-2017">2017-2018</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fuel Type Filter -->
+        <div class="filter-group">
+          <div class="filter-title active-filter">
+            <span>Fuel Type</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="filter-content">
+            <div class="filter-option">
+              <input type="checkbox" id="fuel-gasoline" checked>
+              <label for="fuel-gasoline">Gasoline</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="fuel-diesel" checked>
+              <label for="fuel-diesel">Diesel</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="fuel-hybrid" checked>
+              <label for="fuel-hybrid">Hybrid</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="fuel-electric" checked>
+              <label for="fuel-electric">Electric</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transmission Filter -->
+        <div class="filter-group">
+          <div class="filter-title active-filter">
+            <span>Transmission</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="filter-content">
+            <div class="filter-option">
+              <input type="checkbox" id="trans-automatic" checked>
+              <label for="trans-automatic">Automatic</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="trans-manual" checked>
+              <label for="trans-manual">Manual</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="trans-semiauto" checked>
+              <label for="trans-semiauto">Semi-Auto</label>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Cars Grid -->
+      <main class="cars-grid" id="cars-grid">
+        <!-- Cars will be dynamically inserted by JS -->
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>DriveHub Motors</h3>
+          <p>Providing exceptional luxury vehicles for over 25 years.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Best Deals</a></li>
+            <li><a href="#">Sell Your Car</a></li>
+            <li><a href="#">Financing</a></li>
+            <li><a href="#">Test Drive</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> 1234 Westlands Avenue, Nairobi, Kenya</li>
+            <li><i class="fas fa-phone"></i> +254 701 234 567</li>
+            <li><i class="fas fa-envelope"></i> support@drivehubmotors.fake</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 DriveHub Motors. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="cars.js"></script>
+</body>
+</html>
+
+
