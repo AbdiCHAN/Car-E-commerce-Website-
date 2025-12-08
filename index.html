@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DriveHub Motors | Home</title>
-    <!-- Link main CSS -->
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="styles/index.css">
-    <!-- Font Awesome for icons -->
+    <!-- Main js-->
+     <script src="scripts/index.js"></script>
+    
+
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -18,9 +24,11 @@
                     <i class="fas fa-car"></i>
                     <div>
                         <h1>DriveHub <span>Motors</span></h1>
-                        <p class="tagline">Luxury automotive excellence since 1995</p>
+                        <p class="tagline">Luxury Automotive Excellence Since 1995</p>
                     </div>
                 </div>
+
+                <!-- Navigation -->
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
@@ -28,76 +36,105 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="cart.html">Cart</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero / Banner -->
     <section class="hero">
         <div class="container">
             <h2>Find Your Dream Car Today</h2>
-            <p>Explore our premium collection of luxury vehicles, hand-picked for quality and performance.</p>
+            <p>Explore a premium selection of luxury, performance, and executive vehicles.</p>
+            <p>From sleek sedans to powerful SUVs, we help you choose a vehicle that fits your lifestyle and goals.</p>
             <a href="cars.html" class="btn-cta">Browse Cars</a>
         </div>
     </section>
 
-    <!-- Featured Cars Section -->
+    <!-- Featured Cars -->
     <section class="featured-cars">
         <div class="container">
             <h2>Featured Vehicles</h2>
+            <p>Hand-picked premium cars selected for quality, reliability, and top-tier performance.</p>
+
             <div class="car-cards">
+
+                <!-- Car 1 -->
                 <div class="car-card">
                     <img src="https://i.pinimg.com/1200x/3e/44/a2/3e44a2ae429c533371add5dae7a85163.jpg" alt="Mercedes S-Class 2022">
                     <h3>Mercedes-Benz S-Class 2022</h3>
                     <p>$115,000 • Sedan • Automatic</p>
+                    <p>Experience unmatched comfort, advanced technology, and executive luxury.</p>
                     <a href="car-details.html?id=1" class="btn-details">View Details</a>
                 </div>
+
+                <!-- Car 2 -->
                 <div class="car-card">
-                    <img src="https://i.pinimg.com/736x/b5/38/91/b538913e20b55b100615d259622ce7ef.jpg" alt="BMW X7 M50i 2023">
+                    <img src="https://i.pinimg.com/736x/b5/38/91/b538913e20b55b100615d259622ce7ef.jpg" alt="BMW X7 2023">
                     <h3>BMW X7 M50i 2023</h3>
                     <p>$105,000 • SUV • Automatic</p>
+                    <p>A full-size luxury SUV with power, comfort, and strong road presence.</p>
                     <a href="car-details.html?id=2" class="btn-details">View Details</a>
                 </div>
+
+                <!-- Car 3 -->
                 <div class="car-card">
-                    <img src="https://i.pinimg.com/736x/b3/21/bd/b321bd09d3f8580b248d1d87f2fcf39d.jpg" alt="Audi RS7 Sportback 2021">
+                    <img src="https://i.pinimg.com/736x/b3/21/bd/b321bd09d3f8580b248d1d87f2fcf39d.jpg" alt="Audi RS7 2021">
                     <h3>Audi RS7 Sportback 2021</h3>
                     <p>$125,000 • Sports • Automatic</p>
+                    <p>High-performance luxury with a sleek fastback design and explosive power.</p>
                     <a href="car-details.html?id=3" class="btn-details">View Details</a>
                 </div>
+
+                <!-- Car 4 -->
                 <div class="car-card">
-                    <img src="https://i.pinimg.com/736x/f9/23/5c/f9235ca1a91c153c834bed446b5532fa.jpg" alt="Lexus RX 500h 2022">
+                    <img src="https://i.pinimg.com/736x/f9/23/5c/f9235ca1a91c153c834bed446b5532fa.jpg" alt="Lexus RX 500h">
                     <h3>Lexus RX 500h 2022</h3>
                     <p>$70,000 • SUV • Hybrid</p>
-                    <a href="car-details.html?id=4" class="btn-details">View Details</a> 
-             </div>
-                 <div class="car-card">
-                    <img src="https://i.pinimg.com/736x/1c/30/96/1c309666cafc8c1b8c5f4ebbf3b157c2.jpg">
+                    <p>A stylish hybrid SUV offering efficiency, comfort, and smooth performance.</p>
+                    <a href="car-details.html?id=4" class="btn-details">View Details</a>
+                </div>
+
+                <!-- Car 5 -->
+                <div class="car-card">
+                    <img src="https://i.pinimg.com/736x/1c/30/96/1c309666cafc8c1b8c5f4ebbf3b157c2.jpg" alt="Porsche 911 Carrera">
                     <h3>Porsche 911 Carrera 2021</h3>
                     <p>$99,000 • Sports • Manual</p>
+                    <p>A legendary sports car known for its precision, heritage, and thrilling drive.</p>
                     <a href="car-details.html?id=5" class="btn-details">View Details</a>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section class="about">
         <div class="container">
             <h2>About DriveHub Motors</h2>
-            <p>At DriveHub Motors, we are committed to providing luxury vehicles with unmatched quality and service. Our selection spans high-performance sports cars, elegant sedans, and versatile SUVs.</p>
-            <P>DriveHub Motors is built on one simple mission — to make finding your next car easy, trustworthy, and enjoyable. We connect buyers with high-quality vehicles, transparent information, and a smooth shopping experience from start to finish. Whether youre looking for a first car, a family upgrade, or a luxury ride, DriveHub Motors is committed to offering reliable options, honest guidance, and professional service. With a focus on customer satisfaction and long-term relationships, we aim to be the hub where confidence meets convenience in the world of car buying.</P>
+            <p>
+                DriveHub Motors is committed to providing high-quality luxury vehicles with a seamless buying experience.
+                Since 1995, we have specialized in offering premium cars backed by trust, expertise, and customer satisfaction.
+            </p>
+
+            <p>
+                Whether you're looking for your dream performance car, a reliable family SUV, or a first-class executive
+                sedan, our team ensures transparent information, verified vehicles, and professional assistance from start to finish.
+            </p>
+
             <a href="about.html" class="btn-cta">Learn More</a>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
+    <!-- CTA Section -->
     <section class="cta">
         <div class="container">
             <h2>Ready to Own Your Dream Car?</h2>
-            <p>Browse our inventory or contact us for exclusive offers and financing options. </p>
-            <p>We are here to help you find the perfect vehicle tht suits according to your needs and budget.</p> 
-            <p>Contact us today to schedule a test drive or get more information about our vehicles</p>
-            <p> We look forward to serving you and helping you find your dream car at DriveHub Motors.
+            <p>We help you choose the perfect car based on your budget, needs, and lifestyle.</p>
+            <p>Book a test drive, request more details, or explore financing options.</p>
+
             <a href="cars.html" class="btn-cta">Browse Inventory</a>
             <a href="contact.html" class="btn-cta secondary">Contact Us</a>
         </div>
@@ -106,11 +143,14 @@
     <!-- Footer -->
     <footer>
         <div class="container">
+
             <div class="footer-content">
+
                 <div class="footer-section">
                     <h3>DriveHub Motors</h3>
-                    <p>Providing exceptional luxury vehicles and service since 1995</p>
+                    <p>Delivering Luxury, Performance & Excellence for Over 29 Years.</p>
                 </div>
+
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
@@ -118,7 +158,16 @@
                         <li><a href="cars.html">Best Deals</a></li>
                         <li><a href="contact.html">Sell Your Car</a></li>
                         <li><a href="checkout.html">Financing</a></li>
-                        <li><a href="cart.html">rentals</a></li>
+                        <li><a href="cart.html">Rentals</a></li>
+                    </ul>
+                </div>
 
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
 
 
