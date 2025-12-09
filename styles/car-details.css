@@ -1,315 +1,478 @@
 /* ------------------------------------------------------
-   DRIVEHUB MOTORS — CAR DETAILS PAGE
-   Dark luxury theme with gold accents
+   //DRIVEHUB MOTORS — FULL CSS (Dark Luxury Theme + Gold)
+   Updated: larger, sharper logo + subtle hover
 -------------------------------------------------------*/
 
-/* ---------- GLOBAL RESET ---------- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* -------------------------
+   THEME VARIABLES
+------------------------- */
+:root {
+  --bg: #0f0f0f;
+  --panel: #111;
+  --text-main: #fff;
+  --text-muted: #d6d6d6;
+  --gold: #c2a35d;
+  --gold-light: #e6c978;
+  --accent: #0d6efd;
+  --radius: 12px;
+  --gap: 20px;
+  --gap-sm: 10px;
+  --max-width: 1200px;
+  --font-sans: "Poppins", Arial, sans-serif;
+  --line-height: 1.6;
+  --h1-size: clamp(1.8rem, 4vw, 3rem);
+  --h2-size: clamp(1.2rem, 2vw, 2.4rem);
+  --text-base: 1rem;
+}
+
+/* -------------------------
+   GLOBAL RESET
+------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: "Poppins", Arial, sans-serif;
-    background-color: #0f0f0f;
-    color: whitesmoke;
-    line-height: 1.6;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: var(--line-height);
 }
 
-/* ---------- NAVIGATION ---------- */
+img {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Utility container */
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-inline: var(--gap);
+}
+
+/* -------------------------
+   NAVIGATION / HEADER (Updated Logo)
+------------------------- */
 .navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 40px;
-    background-color: #111;
-    border-bottom: 1px solid #222;
+  background: var(--panel);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px var(--gap);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Logo wrapper — image + brand text */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Bigger, sharper logo image with subtle hover */
 .navbar .logo img {
-    height: 55px;
-    width: auto;
+  height: 70px;         /* increased size */
+  width: auto;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.28s cubic-bezier(.2,.9,.3,1), box-shadow 0.28s;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
 }
 
+.navbar .logo img:hover {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+/* Optional brand text beside the logo image */
+.navbar .logo h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1;
+  margin: 0;
+}
+
+.navbar .logo h1 span {
+  color: var(--gold);
+  letter-spacing: .2px;
+}
+
+/* Main navigation links */
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
 .nav-links a {
-    color: #e5e5e5;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 16px;
-    transition: 0.3s ease;
+  font-weight: 500;
+  font-size: var(--text-base);
+  color: var(--text-main);
+  transition: color 0.18s ease, transform 0.18s ease;
+  padding: 6px 4px;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #c2a35d; /* gold hover */
+  color: var(--gold);
+  transform: translateY(-2px);
 }
 
-/* ---------- HERO / BANNER ---------- */
-.about-hero {
-    position: relative;
-    height: 350px;
-    background: url("../assets/images/DriveHub Motors Hero Banner.png") center/cover no-repeat;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    text-align: left;
+/* -------------------------
+   HERO / BANNER
+------------------------- */
+.hero {
+  position: relative;
+  height: 350px;
+  background: url("../assets/images/DriveHub-Motors-Hero-Banner.png") center/cover no-repeat;
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem var(--gap);
 }
 
-.about-hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.55);
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
 }
 
-.about-hero h1,
-.about-hero p {
-    position: relative;
-    z-index: 2;
+.hero .hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
 }
 
-.about-hero h1 {
-    font-size: 48px;
-    font-weight: 700;
-    color: #c2a35d; /* gold heading */
+.hero h1 {
+  font-size: var(--h1-size);
+  color: var(--gold);
+  margin-bottom: 10px;
 }
 
-.about-hero p {
-    font-size: 20px;
-    margin-top: 10px;
-    color: #d6d6d6;
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
 }
 
-/* ---------- PAGE CONTAINER ---------- */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-}
-
-/* ---------- CAR DETAILS SECTION ---------- */
+/* -------------------------
+   CAR DETAILS PAGE
+------------------------- */
 .car-details-page {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  padding-block: 40px;
 }
 
-/* ---------- CAR OVERVIEW ---------- */
 .car-overview {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(320px, 1fr);
+  gap: var(--gap);
+  align-items: start;
 }
 
-/* ---------- IMAGE GALLERY ---------- */
+/* IMAGE GALLERY */
 .car-image-gallery {
-    flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
 }
 
 .car-image-gallery .main-image {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    object-fit: cover;
-    box-shadow: 0px 8px 25px rgba(0,0,0,0.7);
+  height: 420px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+  overflow: hidden;
 }
 
-.car-image-gallery .thumbnails {
-    display: flex;
-    gap: 15px;
-    margin-top: 12px;
+.thumbnails {
+  display: flex;
+  gap: var(--gap-sm);
 }
 
-.car-image-gallery .thumbnails img {
-    width: 32%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s;
+.thumbnails img {
+  flex: 1 1 0;
+  width: 0;
+  height: 88px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: transform 0.22s ease, opacity 0.18s ease;
 }
 
-.car-image-gallery .thumbnails img:hover {
-    transform: scale(1.05);
+.thumbnails img:hover {
+  transform: scale(1.03);
+  opacity: 1;
 }
 
-/* ---------- CAR INFO ---------- */
-.car-info {
-    flex: 1 1 50%;
-}
-
+/* CAR INFO */
 .car-info h2 {
-    font-size: 2.4rem;
-    color: #c2a35d; /* gold title */
-    margin-bottom: 12px;
+  font-size: var(--h2-size);
+  color: var(--gold);
+  margin-bottom: 12px;
 }
 
 .car-info .price {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 18px;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 10px 0 18px;
+  color: var(--gold-light);
 }
 
 .car-info .description {
-    color: #d6d6d6;
-    margin-bottom: 25px;
-    line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 25px;
+  line-height: 1.7;
 }
 
-/* ---------- SPECIFICATIONS ---------- */
+/* SPECIFICATIONS */
 .specs-list {
-    list-style: none;
-    margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
 .specs-list li {
-    margin-bottom: 10px;
-    font-size: 1rem;
+  background: rgba(255,255,255,0.05);
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
 }
 
 .specs-list li strong {
-    color: #c2a35d;
+  color: var(--gold);
 }
 
-/* ---------- ACTION BUTTONS ---------- */
+/* ACTION BUTTONS */
 .actions {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .btn {
-    padding: 14px 28px;
-    border-radius: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s ease;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.25s ease;
 }
 
 .btn-add-cart {
-    background: #c2a35d;
-    color: #111;
+  background: var(--gold);
+  color: var(--panel);
 }
 
 .btn-add-cart:hover {
-    background: #e6c978;
+  background: var(--gold-light);
 }
 
 .btn-favorite {
-    background: rgba(255,255,255,0.1);
-    color: #fff;
+  background: rgba(255,255,255,0.1);
+  color: var(--text-main);
 }
 
 .btn-favorite:hover {
-    background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.2);
 }
 
-/* ---------- RELATED CARS ---------- */
+/* -------------------------
+   RELATED CARS
+------------------------- */
 .related-cars {
-    margin-top: 60px;
+  margin-top: 60px;
 }
 
 .related-cars h3 {
-    color: #c2a35d;
-    margin-bottom: 25px;
+  color: var(--gold);
+  margin-bottom: 25px;
 }
 
 .car-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--gap);
 }
 
 .car-card {
-    background: #111;
-    flex: 1 1 calc(33% - 20px);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
 }
 
 .car-card:hover {
-    transform: translateY(-5px);
-}
-
-.car-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
 .car-card h4 {
-    padding: 10px 15px;
-    font-size: 1.2rem;
-    color: #c2a35d;
+  color: var(--gold);
+  margin: 10px 0 6px;
 }
 
 .car-card p {
-    padding: 0 15px 10px 15px;
-    font-size: 1rem;
-    color: #d6d6d6;
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
+/* Details button */
 .btn-details {
-    display: block;
-    margin: 0 15px 15px 15px;
-    padding: 10px;
-    text-align: center;
-    background: #c2a35d;
-    color: #111;
-    border-radius: 10px;
-    font-weight: 600;
-    text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: var(--gold);
+  color: var(--panel);
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.25s ease;
 }
 
 .btn-details:hover {
-    background: #e6c978;
+  background: var(--gold-light);
 }
 
-/* ---------- FOOTER ---------- */
+/* -------------------------
+   FOOTER
+------------------------- */
 footer {
-    background-color: #111;
-    padding: 20px;
-    margin-top: 40px;
+  background: #000;
+  color: #fff;
+  padding: 45px 0 25px;
+  border-top: 3px solid var(--gold-light);
+  font-family: Arial, sans-serif;
 }
 
-footer p,
-footer li {
-    color: #777;
-    font-size: 15px;
+.footer-content {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: auto;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 }
 
-/* ---------- RESPONSIVE ---------- */
+.footer-section h3 {
+  color: var(--gold-light);
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.footer-section p {
+  font-size: 14px;
+  color: #d9d9d9;
+}
+
+.footer-section ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: #d9d9d9;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--gold-light);
+  padding-left: 4px;
+}
+
+footer i {
+  color:var(--gold-light) ;
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.copyright {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 20px auto 0;
+  padding-top: 12px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  border-top: 1px solid #222;
+}
+
+/* -------------------------
+   RESPONSIVE
+------------------------- */
 @media (max-width: 992px) {
-    .car-overview {
-        flex-direction: column;
-    }
-    .car-image-gallery, .car-info {
-        flex: 1 1 100%;
-    }
-    .car-card {
-        flex: 1 1 100%;
-    }
+  .car-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .main-image {
+    height: 320px;
+  }
+
+  .thumbnails img {
+    height: 70px;
+  }
 }
 
-@media (max-width: 600px) {
-    .car-image-gallery .thumbnails img {
-        height: 70px;
-    }
+@media (max-width: 480px) {
+  .hero {
+    height: 220px;
+  }
+
+  .main-image {
+    height: 240px;
+  }
+
+  .thumbnails img {
+    height: 56px;
+  }
+
+  .navbar {
+    padding-inline: 12px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .footer-content {
+    gap: 15px;
+  }
+
+  .footer-section h3 {
+    font-size: 1rem;
+  }
+
+  .footer-section a {
+    font-size: 13px;
+  }
 }
