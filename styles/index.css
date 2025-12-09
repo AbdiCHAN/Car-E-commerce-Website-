@@ -5,3 +5,85 @@
 /* Defines variables (colors,spacing,border-radius,shadows) base styles (body,headings , buttons , links), and layout utilities (containers,grids)
 /* Ensures consistent design lnguage across the website */
 /* Write your code below */
+
+ 
+:root {
+    --primary-color: #ff5733;
+    --secondary-color: white;
+    --background-color: #f4f4f4;
+    --text-color: #555555;
+    --border-radius: 5px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --spacing-unit: 16px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+  
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--secondary-color);
+    margin-bottom: calc(var(--spacing-unit) / 2);
+}
+
+/* backround-color: var(--primary-color);{
+    color: #fff;
+    padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
+    text-align: center;
+} */
+colgroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-image: url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+feColorMatrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-unit);
+    padding: calc(var(--spacing-unit) * 2);
+}
+
+#container {
+  background-color: black
+}
+
+.car-cards {
+    background-color: black;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: calc(var(--spacing-unit) * 1.5);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.homepage {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+
+
+  
+}
+
+.container1 {
+    background-color: white;
+    color: black;
+}
+
+.container1 .container1h1 {
+    color: black;
+}
