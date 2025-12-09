@@ -1,59 +1,61 @@
-<!-- car-details.html - -->
-<h1>Car Details</h1>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DriveHub Motors | Mercedes‑Benz S‑Class 2022</title>
-<link rel="stylesheet" href="styles/car-details.css">
+  <title>DriveHub Motors | Mercedes-Benz S-Class 2022</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main Car Details CSS -->
+  <link rel="stylesheet" href="styles/car-details.css">
 </head>
 <body>
 
-  <!-- Header/Nav -->
-  <header>
-    <div class="container header-content">
-      <div class="logo">
-        <i class="fas fa-car"></i>
-        <div>
-          <h1>DriveHub <span>Motors</span></h1>
-          <p class="tagline">Luxury automotive excellence since 1995</p>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/images/DriveHub Motors Logo.png" alt="DriveHub Motors Logo">
         </div>
-      </div>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="cars.html">Cars</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="cart.html">Cart</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Car Detail Section -->
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cars.html">Cars</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+        </ul>
+    </nav>
+
+  <!-- Car Detail Page -->
   <main class="car-details-page container">
     <div class="car-overview">
+
+      <!-- IMAGE GALLERY -->
       <div class="car-image-gallery">
-        <!-- main image -->
-        <img src="assets/images/mercedes-s-class-2022-1.jpg"
-             alt="Mercedes‑Benz S‑Class 2022 – front view"
+        <img src="https://images.hgmsites.net/med/2022-mercedes-benz-s-class-s-580-4matic-sedan-front-exterior-view_100847772_m.jpg"
+             alt="Mercedes-Benz S-Class 2022 – front view"
              class="main-image">
-        <!-- thumbnails -->
+
         <div class="thumbnails">
-          <img src="assets/images/mercedes-s-class-2022-2.jpg" alt="Side view">
-          <img src="assets/images/mercedes-s-class-2022-3.jpg" alt="Rear view">
-          <img src="assets/images/mercedes-s-class-2022-4.jpg" alt="Interior view">
+          <img src="https://images.hgmsites.net/med/2022-mercedes-benz-s-class-s-500-4matic-sedan-side-exterior-view_100829916_m.jpg" alt="Side view">
+          <img src="https://www.thecarconnection.com/overview/mercedes-benz_s-class_2022" alt="Rear view">
+          <img src="https://di-uploads-pod7.dealerinspire.com/mercedesbenzedmontonwestltd/uploads/2022/03/All-New-2022-Mercedes-Benz-S-Class-Sedan-Interior-1024x577.jpg" alt="Interior view">
         </div>
       </div>
 
+      <!-- CAR INFO -->
       <div class="car-info">
-        <h2>Mercedes‑Benz S‑Class 2022</h2>
+        <h2>Mercedes-Benz S-Class 2022</h2>
         <p class="price">$115,000</p>
         <p class="description">
-          The 2022 Mercedes‑Benz S‑Class embodies ultimate luxury and cutting‑edge technology — an elegant blend of comfort, power, and sophistication. Equipped with a refined interior, powerful engine, and seamless performance, it's a top choice for discerning buyers.
+          The 2022 Mercedes-Benz S-Class embodies ultimate luxury and cutting-edge technology —
+          an elegant blend of comfort, power, and sophistication.
         </p>
 
         <h3>Specifications</h3>
@@ -69,30 +71,34 @@
         <div class="actions">
           <button class="btn btn-add-cart">Add to Cart</button>
           <button class="btn btn-favorite"><i class="far fa-heart"></i> Add to Wishlist</button>
+          <a href="checkout.html" class="btn btn-checkout">Proceed to Checkout</a>
         </div>
       </div>
+
     </div>
 
-    <!-- Related Cars Section -->
+    <!-- RELATED CARS -->
     <section class="related-cars">
       <h3>Related Vehicles</h3>
       <div class="car-cards">
         <div class="car-card">
-          <img src="assets/images/bmw-x7-m50i-2023.jpg" alt="BMW X7 M50i 2023">
+          <img src="https://pictures.dealer.com/b/bmwofhoustonnorthinthewoodlands/0065/8a0a29fddd621fdaa4acd03773dbebe4x.jpg?impolicy=downsize_bkpt&imdensity=1&w=520" alt="BMW X7 M50i 2023">
           <h4>BMW X7 M50i 2023</h4>
           <p>$105,000 • SUV • Automatic</p>
           <a href="car-details.html" class="btn-details">View Details</a>
         </div>
+
         <div class="car-card">
-          <img src="assets/images/audi-rs7-2021.jpg" alt="Audi RS7 Sportback 2021">
+          <img src="https://preview.free3d.com/img/2020/05/2399391630768473339/ec580yxq.jpg" alt="Audi RS7 2021">
           <h4>Audi RS7 Sportback 2021</h4>
           <p>$125,000 • Sports • Automatic</p>
           <a href="car-details.html" class="btn-details">View Details</a>
         </div>
+
         <div class="car-card">
-          <img src="assets/images/porsche-911-carrera-s-2020.jpg" alt="Porsche 911 Carrera S 2020">
+          <img src="https://www.marshallgoldman.com/imagetag/1070/6/l/Used-2020-Porsche-911-Carrera-4S-1612466814.jpg" alt="Porsche 911 Carrera 2020">
           <h4>Porsche 911 Carrera S 2020</h4>
-          <p>$135,000 • Coupe • Semi‑Auto</p>
+          <p>$135,000 • Coupe • Semi-Auto</p>
           <a href="car-details.html" class="btn-details">View Details</a>
         </div>
       </div>
@@ -100,13 +106,14 @@
 
   </main>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <div class="container footer-content">
       <div class="footer-section">
         <h3>DriveHub Motors</h3>
         <p>Providing exceptional luxury vehicles for over 25 years.</p>
       </div>
+
       <div class="footer-section">
         <h3>Quick Links</h3>
         <ul>
@@ -116,6 +123,7 @@
           <li><a href="cart.html">Cart</a></li>
         </ul>
       </div>
+
       <div class="footer-section">
         <h3>Contact Us</h3>
         <ul>
@@ -125,15 +133,15 @@
         </ul>
       </div>
     </div>
+
     <div class="copyright">
       <p>&copy; 2025 DriveHub Motors. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- JS (optional) -->
+  <p class="portfolio-note">This website is a portfolio project and not for commercial use.</p>
+
   <script src="scripts/car-details.js" defer></script>
 
 </body>
 </html>
-    <p class="portofolio-note" > This website is only a portofolio project and not meant use for commercial purposes</p>
-

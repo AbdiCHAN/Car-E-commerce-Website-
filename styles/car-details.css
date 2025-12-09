@@ -1,13 +1,9 @@
-/*car-details.css - styling for car details page */
-/* Styles specific to car details page (car-details.html) */
-/* Car details section styles */
-/* Large car image gallery with main image and thumbnails */
-/* Car info section with title, price, specifications, badges and features */
-/* Call-to-action buttons like "Add to Cart"*/
-/* Related cars/recommendations section*/
-/* Responsive layout for mobile and desktop views */
-/* Wrte your code below */
-/* GLOBAL */
+/* ------------------------------------------------------
+   DRIVEHUB MOTORS — CAR DETAILS PAGE
+   Dark luxury theme with gold accents
+-------------------------------------------------------*/
+
+/* ---------- GLOBAL RESET ---------- */
 * {
     margin: 0;
     padding: 0;
@@ -17,5 +13,303 @@
 body {
     font-family: "Poppins", Arial, sans-serif;
     background-color: #0f0f0f;
+    color: whitesmoke;
+    line-height: 1.6;
+}
+
+/* ---------- NAVIGATION ---------- */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background-color: #111;
+    border-bottom: 1px solid #222;
+}
+
+.navbar .logo img {
+    height: 55px;
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
     color: #e5e5e5;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #c2a35d; /* gold hover */
+}
+
+/* ---------- HERO / BANNER ---------- */
+.about-hero {
+    position: relative;
+    height: 350px;
+    background: url("../assets/images/DriveHub Motors Hero Banner.png") center/cover no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+}
+
+.about-hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+}
+
+.about-hero h1,
+.about-hero p {
+    position: relative;
+    z-index: 2;
+}
+
+.about-hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #c2a35d; /* gold heading */
+}
+
+.about-hero p {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #d6d6d6;
+}
+
+/* ---------- PAGE CONTAINER ---------- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* ---------- CAR DETAILS SECTION ---------- */
+.car-details-page {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* ---------- CAR OVERVIEW ---------- */
+.car-overview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* ---------- IMAGE GALLERY ---------- */
+.car-image-gallery {
+    flex: 1 1 45%;
+}
+
+.car-image-gallery .main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.7);
+}
+
+.car-image-gallery .thumbnails {
+    display: flex;
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.car-image-gallery .thumbnails img {
+    width: 32%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.car-image-gallery .thumbnails img:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- CAR INFO ---------- */
+.car-info {
+    flex: 1 1 50%;
+}
+
+.car-info h2 {
+    font-size: 2.4rem;
+    color: #c2a35d; /* gold title */
+    margin-bottom: 12px;
+}
+
+.car-info .price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.car-info .description {
+    color: #d6d6d6;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+/* ---------- SPECIFICATIONS ---------- */
+.specs-list {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.specs-list li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.specs-list li strong {
+    color: #c2a35d;
+}
+
+/* ---------- ACTION BUTTONS ---------- */
+.actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+}
+
+.btn-add-cart {
+    background: #c2a35d;
+    color: #111;
+}
+
+.btn-add-cart:hover {
+    background: #e6c978;
+}
+
+.btn-favorite {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+.btn-favorite:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* ---------- RELATED CARS ---------- */
+.related-cars {
+    margin-top: 60px;
+}
+
+.related-cars h3 {
+    color: #c2a35d;
+    margin-bottom: 25px;
+}
+
+.car-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.car-card {
+    background: #111;
+    flex: 1 1 calc(33% - 20px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+}
+
+.car-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.car-card h4 {
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    color: #c2a35d;
+}
+
+.car-card p {
+    padding: 0 15px 10px 15px;
+    font-size: 1rem;
+    color: #d6d6d6;
+}
+
+.btn-details {
+    display: block;
+    margin: 0 15px 15px 15px;
+    padding: 10px;
+    text-align: center;
+    background: #c2a35d;
+    color: #111;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-details:hover {
+    background: #e6c978;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background-color: #111;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p,
+footer li {
+    color: #777;
+    font-size: 15px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 992px) {
+    .car-overview {
+        flex-direction: column;
+    }
+    .car-image-gallery, .car-info {
+        flex: 1 1 100%;
+    }
+    .car-card {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .car-image-gallery .thumbnails img {
+        height: 70px;
+    }
 }
