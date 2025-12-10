@@ -5,3 +5,41 @@
 /* Defines variables (colors,spacing,border-radius,shadows) base styles (body,headings , buttons , links), and layout utilities (containers,grids)
 /* Ensures consistent design lnguage across the website */
 /* Write your code below */
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1, h2, h3{
+color: #c2a35d   
+}
+a{
+text-decoration:none;
+color: inherit;
+}
+
+.container1, .container{
+    width:100%;
+    margin: auto;
+
+}
+
+.header-content{
+  
+
+}
+
+.layout{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+    
+    
