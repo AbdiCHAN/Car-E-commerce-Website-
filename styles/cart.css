@@ -4,3 +4,212 @@
 /* Style buttons for "Proceed to checkout" and "Continue Shopping"*/
 /* Add responsivenss for mobile and desktop views*/
 /*Write your code below */
+/* ===========================
+   1. Card Grid Layout
+   =========================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .cards-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* ===========================
+   2. Card Container
+   =========================== */
+.car-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+/* Hover Effect */
+.car-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border: 1px solid #0077ff;
+}
+
+/* ===========================
+   3. Car Image
+   =========================== */
+.car-card__image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background: #f2f2f2;
+}
+
+/* ===========================
+   4. Card Content
+   =========================== */
+.car-card__content {
+  padding: 1rem 1.25rem 1.25rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   5. Title & Description
+   =========================== */
+.car-card__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0.25rem 0;
+  color: #222;
+}
+
+.car-card__description {
+  font-size: 0.98rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+  flex: 1;
+}
+
+/* ===========================
+   6. Price
+   =========================== */
+.car-card__price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0077ff;
+  margin-bottom: 0.75rem;
+}
+
+/* ===========================
+   7. Badges
+   =========================== */
+.car-card__badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.car-card__badge {
+  background: #ffeb3b;
+  color: #222;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+}
+
+.car-card__badge--sale {
+  background: #ff5252;
+  color: #fff;
+}
+
+.car-card__badge--new {
+  background: #4caf50;
+  color: #fff;
+}
+
+/* ===========================
+   8. Action Buttons
+   =========================== */
+.car-card__actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.car-card__button {
+  flex: 1;
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.car-card__button--cart {
+  background: #0077ff;
+  color: #fff;
+}
+
+.car-card__button--cart:hover {
+  background: #005bb5;
+}
+
+.car-card__button--details {
+  background: #f2f2f2;
+  color: #222;
+}
+
+.car-card__button--details:hover {
+  background: #e0e0e0;
+}
+
+/* ===========================
+   9. Responsive Tweaks
+   =========================== */
+@media (max-width: 599px) {
+  .car-card__content {
+    padding: 1rem;
+  }
+  .car-card__title {
+    font-size: 1.05rem;
+  }
+  .car-card__price {
+    font-size: 1rem;
+  }
+}
+
+/* ===========================
+   10. cart-layout
+   =========================== */
+
+.cart-layout {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cart-items {
+  flex: 2;
+}
+.cart-summary {
+  flex: 1;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+  .cart-layout {
+    flex-direction: column;
+  }
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 3rem;
+  color: #555;
+}
+.empty-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
