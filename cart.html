@@ -1,184 +1,109 @@
-
-    <!-- cart.html -   -->
+<!-- cart.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Shopping Cart</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-        }
-        .cart-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            text-align: center;
-            color: #333;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .quantity-controls {
-            display: flex;
-            align-items: center;
-        }
-        
-        .quantity-controls button:hover 
-        
-        
-            .remove-btn:hover 
-           
-        
-        .summary {
-            border-top: 2px solid #ddd;
-            padding-top: 20px;
-            text-align: right;
-        }
-        .summary div {
-            margin-bottom: 10px;
-        }
-        .total {
-            font-weight: bold;
-            font-size: 1.2em;
-            
-        }
-        @media (max-width: 600px) {
-            table, th, td {
-                display: block;
-                width: 100%;
-            }
-            th {
-                display: none;
-            }
-            td {
-                text-align: right;
-                padding-left: 50%;
-                position: relative;
-            }
-            td:before {
-                content: attr(data-label) ": ";
-                position: absolute;
-                left: 10px;
-                font-weight: bold;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Shopping Cart</title>
+  <link rel="stylesheet" href="styles/cart.css">
+<!-- use external CSS -->
 </head>
 <body>
-    <div class="cart-container">
-        <h2>Your Shopping Cart</h2>
-        <table id="cart-table">
-            <thead>
-                <tr>
-                    <th>Car Model</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr data-price="250000">
-                    <td data-label="Car Model">Sedan Model X</td>
-                    <td data-label="Price">Ksh250,000</td>
-                    <td data-label="Quantity">
-                        <div class="quantity-controls">
-                            <button onclick="changeQuantity(this, -1)">-</button>
-                            <span class="quantity">1</span>
-                            <button onclick="changeQuantity(this, 1)">+</button>
-                        </div>
-                    </td>
-                    <td data-label="Subtotal">Ksh250,000</td>
-                    <td><button class="remove-btn" onclick="removeItem(this)">Remove</button></td>
-                </tr>
-                <tr data-price="350000">
-                    <td data-label="Car Model">SUV Model Y</td>
-                    <td data-label="Price">Ksh350,000</td>
-                    <td data-label="Quantity">
-                        <div class="quantity-controls">
-                            <button onclick="changeQuantity(this, -1)">-</button>
-                            <span class="quantity">1</span>
-                            <button onclick="changeQuantity(this, 1)">+</button>
-                        </div>
-                    </td>
-                    <td data-label="Subtotal">Ksh350,000</td>
-                    <td><button class="remove-btn" onclick="removeItem(this)">Remove</button></td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <div class="summary">
-            <div>Subtotal: <span id="subtotal">Ksh600,000</span></div>
-            <div>Tax (10%): <span id="tax">Ksh60,000</span></div>
-            <div class="total">Total: <span id="total">Ksh660,000</span></div>
+  <div class="cart-layout">
+    <!-- Cart Items -->
+    <div class="cart-items">
+      <h2>Your Shopping Cart</h2>
+
+      <!-- Item 1 -->
+      <div class="cart-item" data-price="250000">
+        <img src="https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg" alt="Sedan Model X">
+        <div class="cart-item-title">Sedan Model X</div>
+        <div class="cart-item-quantity">
+          <button onclick="changeQuantity(this, -1)">-</button>
+          <span class="quantity">1</span>
+          <button onclick="changeQuantity(this, 1)">+</button>
         </div>
+        <div class="cart-item-price">Ksh250,000</div>
+        <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="cart-item" data-price="350000">
+        <img src="https://images.pexels.com/photos/1519192/pexels-photo-1519192.jpeg" alt="SUV Model Y">
+        <div class="cart-item-title">SUV Model Y</div>
+        <div class="cart-item-quantity">
+          <button onclick="changeQuantity(this, -1)">-</button>
+          <span class="quantity">1</span>
+          <button onclick="changeQuantity(this, 1)">+</button>
+        </div>
+        <div class="cart-item-price">Ksh350,000</div>
+        <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+      </div>
     </div>
-    <div class="empty-cart">
-  <span class="empty-icon">🛒</span>
-  <p>Your cart is empty</p>
 
-    <script>
-        function changeQuantity(button, delta) {
-            const row = button.closest('tr');
-            const quantitySpan = row.querySelector('.quantity');
-            let quantity = parseInt(quantitySpan.textContent);
-            quantity += delta;
-            if (quantity < 1) quantity = 1; // Minimum quantity 1
-            quantitySpan.textContent = quantity;
-            updateSubtotal(row);
-            updateTotals();
-        }
+    <!-- Cart Summary -->
+    <div class="cart-summary">
+      <div class="cart-totals">
+        <div class="cart-totals-row">
+          <span>Subtotal:</span>
+          <span id="subtotal">Ksh600,000</span>
+        </div>
+        <div class="cart-totals-row">
+          <span>Tax (10%):</span>
+          <span id="tax">Ksh60,000</span>
+        </div>
+        <div class="cart-total">
+          Total: <span id="total">Ksh660,000</span>
+        </div>
+      </div>
 
-        function updateSubtotal(row) {
-            const price = parseFloat(row.getAttribute('data-price'));
-            const quantity = parseInt(row.querySelector('.quantity').textContent);
-            const subtotal = price * quantity;
-            row.querySelector('[data-label="Subtotal"]').textContent = 'Ksh' + subtotal.toLocaleString();
-        }
+      <div class="cart-actions">
+        <button class="cart-button cart-button--checkout">Proceed to Checkout</button>
+        <button class="cart-button cart-button--continue">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
 
-        function removeItem(button) {
-            button.closest('tr').remove();
-            updateTotals();
-        }
+  <!-- Empty Cart -->
+  <div class="empty-cart" style="display:none;">
+    <span class="empty-icon">🛒</span>
+    <p>Your cart is empty</p>
+  </div>
 
-        function updateTotals() {
-            const rows = document.querySelectorAll('#cart-table tbody tr');
-            let subtotal = 0;
-            rows.forEach(row => {
-                const price = parseFloat(row.getAttribute('data-price'));
-                const quantity = parseInt(row.querySelector('.quantity').textContent);
-                subtotal += price * quantity;
-            });
-            const tax = subtotal * 0.1;
-            const total = subtotal + tax;
-            document.getElementById('subtotal').textContent = 'Ksh' + subtotal.toLocaleString();
-            document.getElementById('tax').textContent = 'Ksh' + tax.toLocaleString();
-            document.getElementById('total').textContent = 'Ksh' + total.toLocaleString();
-        }
-    </script>
+  <script>
+    function changeQuantity(button, delta) {
+      const item = button.closest('.cart-item');
+      const quantitySpan = item.querySelector('.quantity');
+      let quantity = parseInt(quantitySpan.textContent);
+      quantity += delta;
+      if (quantity < 1) quantity = 1;
+      quantitySpan.textContent = quantity;
+      updateTotals();
+    }
 
-    
-</div>
+    function removeItem(button) {
+      button.closest('.cart-item').remove();
+      updateTotals();
+    }
 
+    function updateTotals() {
+      const items = document.querySelectorAll('.cart-item');
+      let subtotal = 0;
+      items.forEach(item => {
+        const price = parseFloat(item.getAttribute('data-price'));
+        const quantity = parseInt(item.querySelector('.quantity').textContent);
+        subtotal += price * quantity;
+        item.querySelector('.cart-item-price').textContent = 'Ksh' + (price * quantity).toLocaleString();
+      });
+      const tax = subtotal * 0.1;
+      const total = subtotal + tax;
+      document.getElementById('subtotal').textContent = 'Ksh' + subtotal.toLocaleString();
+      document.getElementById('tax').textContent = 'Ksh' + tax.toLocaleString();
+      document.getElementById('total').textContent = 'Ksh' + total.toLocaleString();
+
+      // toggle empty cart
+      document.querySelector('.empty-cart').style.display = items.length ? 'none' : 'flex';
+    }
+  </script>
 </body>
 </html>
-

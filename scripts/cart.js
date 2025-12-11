@@ -9,3 +9,6 @@
 // - Apply discounts, promo codes, or taxes if applicable
 // - Handle "Proceed to Checkout" button click
 // write your code below
+// cart.js
+
+
