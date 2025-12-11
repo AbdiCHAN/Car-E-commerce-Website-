@@ -31,15 +31,42 @@ color: inherit;
 }
 
 .header-content{
-  
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;  
 
 }
 
+
+.homebtn, .homebtn1, .homebtn2, .homebtn3, .homebtn4, .homebtn5, .homebtn6{
+    background:#c2a35d;
+    font-size:x-large;
+    color:black
+    
+}
+    
+.logo{
+    display: flex;
+    gap:10px;
+    align-items: center;
+}
+    
 .layout{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+   gap: 40px;
 }
 
+.car-cards{
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(260px, 1fr));
+gap: 35px;
+margin-top: 30px;
+}
+
+.find{
+   
+    font-size:xx-large;
     
-    
+}
