@@ -1,18 +1,297 @@
-/* cart.css - Styling for the shopping cart page */
-/* Styles specific to cart page (cart.html) */
-/* Style the cart items (image,name ,quantity , price,remove button)*/
-/* Style buttons for "Proceed to checkout" and "Continue Shopping"*/
-/* Add responsivenss for mobile and desktop views*/
-/*Write your code below */
-/* GLOBAL */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===========================
+   Global Theme
+   =========================== */
+:root {
+  --primary-bg: #000;       /* pure black */
+  --secondary-bg: #111;     /* deep black */
+  --accent-color: #ffd700;  /* bright gold */
+  --text-color: #f5d76e;    /* softer gold text */
+  --danger-color: #ff5252;  /* red for remove */
 }
 
+/* ===========================
+   Card Grid Layout
+   =========================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .cards-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 900px) {
+  .cards-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+/* ===========================
+   Car Card Container
+   =========================== */
+.car-card {
+  background: var(--secondary-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(255,215,0,0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid transparent;
+}
+
+.car-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(255,215,0,0.3);
+  border: 1px solid var(--accent-color);
+}
+
+/* ===========================
+   Car Image
+   =========================== */
+.car-card__image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background: #222;
+}
+
+/* ===========================
+   Card Content
+   =========================== */
+.car-card__content {
+  padding: 1rem 1.25rem 1.25rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.car-card__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0.25rem 0;
+  color: var(--accent-color);
+}
+
+.car-card__description {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  flex: 1;
+}
+
+.car-card__price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+}
+
+/* ===========================
+   Badges
+   =========================== */
+.car-card__badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.car-card__badge {
+  background: var(--accent-color);
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 1px 3px rgba(255,215,0,0.3);
+}
+
+.car-card__badge--sale { background: var(--danger-color); color: #fff; }
+.car-card__badge--new { background: #4caf50; color: #fff; }
+
+/* ===========================
+   Action Buttons
+   =========================== */
+.car-card__actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.car-card__button {
+  flex: 1;
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.car-card__button--cart {
+  background: var(--accent-color);
+  color: #000;
+}
+.car-card__button--cart:hover { background: #f5d76e; }
+
+.car-card__button--details {
+  background: #222;
+  color: var(--accent-color);
+}
+.car-card__button--details:hover { background: #333; }
+
+/* ===========================
+   Cart Item Container
+   =========================== */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #444;
+  background: var(--secondary-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(255,215,0,0.15);
+}
+
+.cart-item img {
+  width: 80px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.cart-item-title {
+  flex: 1;
+  margin: 0 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-light);
+}
+
+.cart-item-price {
+  font-weight: 600;
+  color: var(--accent-color);
+  margin: 0 1rem;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: var(--danger-color);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.remove-btn:hover { color: #ff0000; }
+
+/* ===========================
+   Totals Section
+   =========================== */
+.cart-totals {
+  padding: 1.5rem;
+  border-top: 2px solid var(--accent-color);
+  background: var(--primary-bg);
+  border-radius: 8px;
+}
+
+.cart-totals-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.cart-total {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  margin-top: 1rem;
+}
+
+/* ===========================
+   Checkout Buttons
+   =========================== */
+.cart-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cart-button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cart-button--checkout {
+  background: var(--accent-color);
+  color: #000;
+}
+.cart-button--checkout:hover { background: #f5d76e; }
+
+.cart-button--continue {
+  background: #222;
+  color: var(--accent-color);
+}
+.cart-button--continue:hover { background: #333; }
+
+/* ===========================
+   Layout (Items + Summary)
+   =========================== */
+.cart-layout {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cart-items { flex: 2; }
+.cart-summary {
+  flex: 1;
+  background: var(--secondary-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(255,215,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .cart-layout { flex-direction: column; }
+}
+
+/* ===========================
+   Empty Cart Message
+   =========================== */
+.empty-cart {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.empty-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+/* ===========================
+   Page Background
+   =========================== */
 body {
-    font-family: "Poppins", Arial, sans-serif;
-    background-color: #0f0f0f;
-    color: #e5e5e5;
+  background-color: var(--primary-bg);
 }

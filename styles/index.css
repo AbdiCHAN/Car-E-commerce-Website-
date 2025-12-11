@@ -1,7 +1,72 @@
-/* styles index.css */
+ /* styles index.css */
 /* Styles the homepage(index.html) */
 /* Handles hero section, feautured vehicles, call-to action buttons,banners and any homepage-specific components*
 /* contains global/shared styles that are used across all pages*/
 /* Defines variables (colors,spacing,border-radius,shadows) base styles (body,headings , buttons , links), and layout utilities (containers,grids)
 /* Ensures consistent design lnguage across the website */
 /* Write your code below */
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1, h2, h3{
+color: #c2a35d   
+}
+a{
+text-decoration:none;
+color: inherit;
+}
+
+.container1, .container{
+    width:100%;
+    margin: auto;
+
+}
+
+.header-content{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;  
+
+}
+
+
+.homebtn, .homebtn1, .homebtn2, .homebtn3, .homebtn4, .homebtn5, .homebtn6{
+    background:#c2a35d;
+    font-size:x-large;
+    color:black
+    
+}
+    
+.logo{
+    display: flex;
+    gap:10px;
+    align-items: center;
+}
+    
+.layout{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   gap: 40px;
+}
+
+.car-cards{
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(260px, 1fr));
+gap: 35px;
+margin-top: 30px;
+}
+
+.find{
+   
+    font-size:xx-large;
+    
+}
