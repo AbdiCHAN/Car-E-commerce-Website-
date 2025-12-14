@@ -1,4 +1,24 @@
-/* GLOBAL */
+/* ===============================
+   DRIVEHUB MOTORS — LUXURY SURFACES
+================================ */
+
+/* DESIGN TOKENS */
+:root {
+    --black-deep: #0b0b0b;
+    --black-soft: #121212;
+    --black-elevated: #1a1a1a;
+
+    --gold-main: #c2a35d;
+    --gold-glow: rgba(194, 163, 93, 0.25);
+
+    --text-primary: #f2f2f2;
+    --text-secondary: #cfcfcf;
+    --text-muted: #9a9a9a;
+
+    --border-subtle: rgba(255,255,255,0.08);
+}
+
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -6,62 +26,73 @@
 }
 
 body {
-    font-family: "Poppins", Arial, sans-serif;
-    background-color: #0f0f0f;
-    color: whitesmoke
+    font-family: "Poppins", sans-serif;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(194,163,93,0.08), transparent 45%),
+        linear-gradient(180deg, #0b0b0b 0%, #101010 40%, #0b0b0b 100%);
+    color: var(--text-primary);
+    line-height: 1.8;
 }
 
-/* NAVIGATION */
+/* ===============================
+   NAVBAR — PREMIUM CONTRAST
+================================ */
 .navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 40px;
-    background-color: #111;
-    border-bottom: 1px solid #222;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 50;
+    width: 100%;
+    height: 90px;
+    padding: 0 80px;
 
-    /* smooth appearance */
-    animation: fadeDown 0.7s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(20,20,20,0.85),
+            rgba(10,10,10,0.65)
+        );
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-subtle);
+    z-index: 1000;
 }
 
-.navbar .logo img {
-    height: 55px;
-    transition: transform 0.3s ease;
-}
-
-.navbar .logo img:hover {
-    transform: scale(1.07);
+.logo img {
+    height: 58px;
+    filter: drop-shadow(0 10px 25px rgba(0,0,0,0.8));
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 44px;
 }
 
 .nav-links a {
-    color: #e5e5e5;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 16px;
-    transition: 0.3s ease;
+    font-size: 14px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
     position: relative;
 }
 
-/* Gold Hover Line */
 .nav-links a::after {
     content: "";
     position: absolute;
+    bottom: -10px;
     left: 0;
-    bottom: -4px;
-    width: 0%;
+    width: 0;
     height: 2px;
-    background: #c2a35d;
-    transition: width 0.3s ease;
+    background: var(--gold-main);
+    transition: width 0.35s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--gold-main);
 }
 
 .nav-links a:hover::after,
@@ -69,115 +100,118 @@ body {
     width: 100%;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #c2a35d;
-}
-
-/* HERO */
+/* ===============================
+   HERO — STUDIO LIGHTING
+================================ */
 .about-hero {
-    position: relative;
-    height: 350px;
-    background: url("../assets/images/DriveHub Motors Hero Banner.png") center/cover no-repeat;
+    height: 100vh;
+    background:
+        radial-gradient(circle at 70% 30%, rgba(194,163,93,0.18), transparent 40%),
+        linear-gradient(90deg, rgba(0,0,0,0.9), rgba(0,0,0,0.4)),
+        url("../assets/images/DriveHub Motors Hero Banner.png") center / cover no-repeat;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 50px;
-    text-align: left;
-    animation: fadeIn 1.3s ease-out;
-}
-
-.about-hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(2px);
-}
-
-.about-hero h1,
-.about-hero p {
+    align-items: center;
+    padding-left: 12%;
     position: relative;
-    z-index: 2;
 }
 
-/* Hero heading with gold glow */
-.about-hero h1 {
-    font-size: 48px;
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: clamp(3.4rem, 5vw, 4.6rem);
     font-weight: 700;
-    color: #c2a35d;
-    text-shadow: 0px 0px 10px rgba(194,163,93,0.3);
-    animation: slideUp 1s ease-out;
+    color: var(--gold-main);
+    text-shadow: 0 10px 40px rgba(0,0,0,0.7);
 }
 
-.about-hero p {
+.hero-content p {
+    margin-top: 16px;
     font-size: 20px;
-    margin-top: 10px;
-    color: #d6d6d6;
-    animation: slideUp 1.3s ease-out;
+    color: var(--text-secondary);
 }
 
-/* ABOUT SECTION */
+/* ===============================
+   CONTENT — LUXURY PANELS
+================================ */
 .about-section {
-    padding: 60px 10%;
-    animation: fadeIn 1.2s ease-out;
+    padding: 160px 10%;
 }
 
-.about-section h2 {
-    color: #c2a35d;
-    font-size: 32px;
-    margin-bottom: 20px;
-    position: relative;
+.container {
+    max-width: 1300px;
+    margin: auto;
 }
 
-/* Gold underline */
-.about-section h2::after {
-    content: "";
+.section-title {
+    font-size: 42px;
+    color: var(--gold-main);
+    margin-bottom: 28px;
+}
+
+.section-description {
+    font-size: 18px;
+    max-width: 900px;
+    color: var(--text-secondary);
+}
+
+/* ===============================
+   FEATURE CARDS — DEPTH
+================================ */
+.feature-list {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 36px;
+}
+
+.feature-list li {
+    list-style: none;
+    padding: 40px;
+    background:
+        linear-gradient(
+            180deg,
+            var(--black-elevated),
+            var(--black-soft)
+        );
+    border: 1px solid var(--border-subtle);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.04),
+        0 30px 60px rgba(0,0,0,0.6);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.feature-list li:hover {
+    transform: translateY(-12px);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.08),
+        0 45px 90px rgba(0,0,0,0.8);
+}
+
+.feature-list li::before {
+    content: "—";
     display: block;
-    width: 60px;
-    height: 3px;
-    background: #c2a35d;
-    margin-top: 8px;
+    color: var(--gold-main);
+    font-size: 26px;
+    margin-bottom: 14px;
 }
 
-.about-section p {
-    color: #d6d6d6;
-    font-size: 17px;
-    margin-bottom: 25px;
-    line-height: 1.7;
-}
-
-.about-section h3 {
-    margin-top: 30px;
-    color: #c2a35d;
-    font-size: 24px;
-}
-
-.about-section ul {
-    margin-top: 15px;
-    padding-left: 22px;
-}
-
-.about-section ul li {
-    margin-bottom: 10px;
-    color: #d6d6d6;
-}
-
-/* FOOTER */
-footer {
-    background-color: #111;
-    padding: 25px;
+/* ===============================
+   FOOTER — SOFT EXIT
+================================ */
+.footer {
+    background:
+        linear-gradient(180deg, #111, #0b0b0b);
+    padding: 48px 20px;
+    border-top: 1px solid var(--border-subtle);
     text-align: center;
-    margin-top: 40px;
-    border-top: 1px solid #222;
-
-    animation: fadeUp 1.3s ease-out;
 }
 
-footer p {
-    color: #777;
-    font-size: 15px;
+.footer p {
+    font-size: 13px;
+    color: var(--text-muted);
+    max-width: 900px;
+    margin: auto;
 }
+
