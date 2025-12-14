@@ -1,20 +1,156 @@
- /* checkout.css - Styling for the checkout page */
-/* Styles specific to checkout page (checkout.hmtl) */
-/* Form layout for billing and shipping information */
-/* Payment section styling (credit card inputs, payment options)*/
-/* Call-to-action buttons or completing the order */
-/* Error states and validation messages */
-/* Responvie layout for mobile and desktop views */
-/* Write your code below */
-/* GLOBAL */
-* {
+body {
+    background: #000; 
+    color: #fff;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-body {
-    font-family: "Poppins", Arial, sans-serif;
-    background-color: #0f0f0f;
-    color: #e5e5e5;
+header h1 {
+    color: #FFD700;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+nav {
+    background: #0d0d0d;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #FFD700;
+}
+
+
+.checkout-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .checkout-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.checkout-section {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.15); 
+}
+
+.checkout-section h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #FFD700; 
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    background: #0d0d0d;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #FFD700;
+    outline: none;
+}
+
+fieldset {
+    border: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+legend {
+    padding: 0 10px;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+input[type="radio"] {
+    accent-color: #FFD700;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #333;
+    text-align: left;
+}
+
+table th {
+    background: #0d0d0d;
+    color: #FFD700;
+}
+
+table tr:nth-child(even) {
+    background: #111;
+}
+
+summary div {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #FFD700;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #d4b100;
 }
