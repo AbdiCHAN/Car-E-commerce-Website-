@@ -1,19 +1,17 @@
-<!-- cars.html -  ->
-<h1>Car Listings</h1>
+<!-- cars.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> DriveHub Motors | Luxury Car Listings</title>
+    <title>DriveHub Motors | Luxury Car Listings</title>
     <link rel="stylesheet" href="listing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="styles/cars.css">
 </head>
 <body>
-    <!-- Header -->
+    <h1>Car Listings</h1>
+
     <header>
         <div class="container">
             <div class="header-content">
@@ -25,18 +23,13 @@
                     </div>
                 </div>
                 <div>
-
-                    
-
                     <p><i class="fas fa-phone-alt"></i> CONTACT</p>
-
                 </div>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <!-- Results Header -->
         <div class="results-header">
             <div>
                 <h2>Luxury Car Listings</h2>
@@ -55,189 +48,115 @@
         </div>
 
         <div class="main-content">
-            <!-- Filters Sidebar -->
             <aside class="filters-sidebar">
                 <div class="filters-header">
-                    <h2>Filter Vehicles</h2>
+                    <h2><i class="fas fa-filter"></i> Filter Vehicles</h2>
                     <button class="reset-filters" id="reset-filters">
                         <i class="fas fa-redo-alt"></i> Reset All
                     </button>
                 </div>
 
-                <!-- Price Filter -->
                 <div class="filter-group">
-                    <div class="filter-title active-filter">
-                        <span>Price Range</span>
+                    <div class="filter-title">
+                        <span><i class="fas fa-tag"></i> Price Range</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="filter-content">
                         <div class="range-inputs">
                             <div class="range-input">
                                 <span>$</span>
-                                <input type="number" id="min-price" placeholder="Min" min="0" max="200000" value="0">
+                                <input type="number" id="min-price" placeholder="Min" value="0">
                             </div>
                             <div class="range-input">
                                 <span>$</span>
-                                <input type="number" id="max-price" placeholder="Max" min="0" max="500000" value="150000">
+                                <input type="number" id="max-price" placeholder="Max" value="150000">
                             </div>
                         </div>
-                        <input type="range" id="price-slider" min="0" max="500000" value="150000" step="10000" class="slider">
+                        <input type="range" id="price-slider" min="0" max="500000" value="150000" step="10000">
                     </div>
                 </div>
 
-                <!-- Brand Filter -->
                 <div class="filter-group">
-                    <div class="filter-title active-filter">
-                        <span>Brand</span>
+                    <div class="filter-title">
+                        <span><i class="fas fa-car"></i> Brand</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="filter-content">
                         <div class="filter-option">
                             <input type="checkbox" id="brand-mercedes" checked>
-                            <label for="brand-mercedes">Mercedes-Benz <span class="filter-count">5</span></label>
+                            <label for="brand-mercedes">Mercedes-Benz</label>
                         </div>
                         <div class="filter-option">
                             <input type="checkbox" id="brand-bmw" checked>
-                            <label for="brand-bmw">BMW <span class="filter-count">4</span></label>
+                            <label for="brand-bmw">BMW</label>
                         </div>
                         <div class="filter-option">
                             <input type="checkbox" id="brand-audi" checked>
-                            <label for="brand-audi">Audi <span class="filter-count">3</span></label>
+                            <label for="brand-audi">Audi</label>
                         </div>
                         <div class="filter-option">
                             <input type="checkbox" id="brand-porsche">
-                            <label for="brand-porsche">Porsche <span class="filter-count">2</span></label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="brand-jaguar">
-                            <label for="brand-jaguar">Jaguar <span class="filter-count">2</span></label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="brand-lexus">
-                            <label for="brand-lexus">Lexus <span class="filter-count">2</span></label>
+                            <label for="brand-porsche">Porsche</label>
                         </div>
                     </div>
                 </div>
 
-                <!-- Vehicle Type -->
                 <div class="filter-group">
-                    <div class="filter-title active-filter">
-                        <span>Vehicle Type</span>
+                    <div class="filter-title">
+                        <span><i class="fas fa-shapes"></i> Vehicle Type</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="filter-content">
                         <div class="filter-option">
                             <input type="checkbox" id="type-sedan" checked>
-                            <label for="type-sedan">Sedan <span class="filter-count">6</span></label>
+                            <label for="type-sedan">Sedan</label>
                         </div>
                         <div class="filter-option">
                             <input type="checkbox" id="type-suv" checked>
-                            <label for="type-suv">SUV <span class="filter-count">4</span></label>
+                            <label for="type-suv">SUV</label>
                         </div>
                         <div class="filter-option">
                             <input type="checkbox" id="type-coupe">
-                            <label for="type-coupe">Coupe <span class="filter-count">3</span></label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="type-convertible">
-                            <label for="type-convertible">Convertible <span class="filter-count">2</span></label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="type-sports">
-                            <label for="type-sports">Sports <span class="filter-count">3</span></label>
+                            <label for="type-coupe">Coupe</label>
                         </div>
                     </div>
                 </div>
 
-                <!-- Year -->
                 <div class="filter-group">
-                    <div class="filter-title active-filter">
-                        <span>Year</span>
+                    <div class="filter-title">
+                        <span><i class="fas fa-calendar-alt"></i> Year</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="filter-content">
                         <div class="filter-option">
                             <input type="checkbox" id="year-2023">
-                            <label for="year-2023">2023-2024 <span class="filter-count">3</span></label>
+                            <label for="year-2023">2023-2024</label>
                         </div>
                         <div class="filter-option">
                             <input type="checkbox" id="year-2021" checked>
-                            <label for="year-2021">2021-2022 <span class="filter-count">5</span></label>
+                            <label for="year-2021">2021-2022</label>
                         </div>
                         <div class="filter-option">
                             <input type="checkbox" id="year-2019" checked>
-                            <label for="year-2019">2019-2020 <span class="filter-count">3</span></label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="year-2017">
-                            <label for="year-2017">2017-2018 <span class="filter-count">2</span></label>
+                            <label for="year-2019">2019-2020</label>
                         </div>
                     </div>
                 </div>
 
-                <!-- Fuel Type -->
-                <div class="filter-group">
-                    <div class="filter-title">
-                        <span>Fuel Type</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="filter-content">
-                        <div class="filter-option">
-                            <input type="checkbox" id="fuel-gasoline" checked>
-                            <label for="fuel-gasoline">Gasoline <span class="filter-count">9</span></label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="fuel-diesel">
-                            <label for="fuel-diesel">Diesel <span class="filter-count">2</span></label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="fuel-hybrid" checked>
-                            <label for="fuel-hybrid">Hybrid <span class="filter-count">3</span></label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="fuel-electric">
-                            <label for="fuel-electric">Electric <span class="filter-count">3</span></label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Transmission -->
-                <div class="filter-group">
-                    <div class="filter-title">
-                        <span>Transmission</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="filter-content">
-                        <div class="filter-option">
-                            <input type="checkbox" id="trans-automatic" checked>
-                            <label for="trans-automatic">Automatic <span class="filter-count">10</span></label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="trans-manual">
-                            <label for="trans-manual">Manual <span class="filter-count">2</span></label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="trans-semiauto">
-                            <label for="trans-semiauto">Semi-Auto <span class="filter-count">3</span></label>
-                        </div>
-                    </div>
-                </div>
             </aside>
 
-            <!-- Cars Gridd -->
             <main class="cars-grid" id="cars-grid">
-                <!-- Cars will be dynamically inserted here -->
+                
             </main>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>DriveHub Motors</h3>
-                    <p>Providing exceptional luxury vehicles for over 25 years. Our curated selection represents the pinnacle of automotive engineering and design.</p>
+                    <p>Providing exceptional luxury vehicles for over 25 years.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
@@ -245,29 +164,183 @@
                         <li><a href="#">New Arrivals</a></li>
                         <li><a href="#">Best Deals</a></li>
                         <li><a href="#">Sell Your Car</a></li>
-                        <li><a href="#">Financing</a></li>
-                        <li><a href="#">Test Drive</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Us</h3>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 1234 Westlands Avenue,Nairobi, Kenya</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 1234 Westlands Avenue, Nairobi</li>
                         <li><i class="fas fa-phone"></i> +254 701 234 567</li>
                         <li><i class="fas fa-envelope"></i> support@drivehubmotors.fake</li>
-                        <li><i class="fas fa-clock"></i> Mon-Sat: 9am-7pm, Sun: 10am-5pm</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 DriveHub Motors. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>&copy; 2025 DriveHub Motors. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-       
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const cars = [
+                {
+                    id: 1,
+                    title: "Mercedes-Benz S-Class",
+                    price: "$129,900",
+                    year: 2022,
+                    image: "https://images.unsplash.com/photo-1563720223488-8f2f62a6e71a?auto=format&fit=crop&w=800&q=80",
+                    badge: "Premium",
+                    fuel: "Gasoline",
+                    mileage: "12,500 mi",
+                    transmission: "Automatic"
+                },
+                {
+                    id: 2,
+                    title: "BMW X7",
+                    price: "$98,500",
+                    year: 2023,
+                    image: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=800&q=80",
+                    badge: "New",
+                    fuel: "Hybrid",
+                    mileage: "8,200 mi",
+                    transmission: "Automatic"
+                },
+                {
+                    id: 3,
+                    title: "Audi RS7",
+                    price: "$145,000",
+                    year: 2021,
+                    image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=800&q=80",
+                    badge: "Sport",
+                    fuel: "Gasoline",
+                    mileage: "18,300 mi",
+                    transmission: "Automatic"
+                },
+                {
+                    id: 4,
+                    title: "Porsche 911",
+                    price: "$189,900",
+                    year: 2023,
+                    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
+                    badge: "Limited",
+                    fuel: "Gasoline",
+                    mileage: "3,500 mi",
+                    transmission: "Automatic"
+                },
+                {
+                    id: 5,
+                    title: "Lexus LX 600",
+                    price: "$112,000",
+                    year: 2022,
+                    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
+                    badge: "Luxury",
+                    fuel: "Hybrid",
+                    mileage: "15,000 mi",
+                    transmission: "Automatic"
+                },
+                {
+                    id: 6,
+                    title: "Jaguar F-Type",
+                    price: "$92,500",
+                    year: 2021,
+                    image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80",
+                    badge: "Convertible",
+                    fuel: "Gasoline",
+                    mileage: "22,100 mi",
+                    transmission: "Automatic"
+                }
+            ];
+
+            function createCarCards() {
+                const carsGrid = document.getElementById('cars-grid');
+                carsGrid.innerHTML = '';
+                
+                cars.forEach(car => {
+                    const carCard = document.createElement('div');
+                    carCard.className = 'car-card';
+                    
+                    carCard.innerHTML = `
+                        <div class="car-image-container">
+                            <img src="${car.image}" alt="${car.title}" class="car-image">
+                            <div class="car-badge">${car.badge}</div>
+                            <button class="favorite-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="car-info">
+                            <div class="car-header">
+                                <h3 class="car-title">${car.title}</h3>
+                                <div class="car-year">${car.year}</div>
+                            </div>
+                            <div class="car-price">${car.price}</div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>${car.fuel}</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>${car.mileage}</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-cog"></i>
+                                    <span>${car.transmission}</span>
+                                </div>
+                            </div>
+                            <button class="view-details-btn">View Details</button>
+                        </div>
+                    `;
+                    
+                    carsGrid.appendChild(carCard);
+                });
+                
+                document.querySelectorAll('.favorite-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const icon = this.querySelector('i');
+                        if (icon.classList.contains('far')) {
+                            icon.classList.remove('far');
+                            icon.classList.add('fas');
+                            this.classList.add('active');
+                        } else {
+                            icon.classList.remove('fas');
+                            icon.classList.add('far');
+                            this.classList.remove('active');
+                        }
+                    });
+                });
+            }
+            
+            createCarCards();
+            
+            document.querySelectorAll('.filter-title').forEach(title => {
+                title.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('show');
+                    const icon = this.querySelector('.fa-chevron-down');
+                    icon.classList.toggle('rotated');
+                });
+            });
+            
+            document.getElementById('reset-filters').addEventListener('click', function() {
+                document.querySelectorAll('.filter-option input').forEach(input => {
+                    if (input.id.includes('mercedes') || input.id.includes('bmw') || 
+                        input.id.includes('audi') || input.id.includes('sedan') || 
+                        input.id.includes('suv') || input.id.includes('2021') || 
+                        input.id.includes('2019')) {
+                        input.checked = true;
+                    } else {
+                        input.checked = false;
+                    }
+                });
+            });
+            
+            document.getElementById('sort-by').addEventListener('change', function() {
+                alert('Sorting by: ' + this.value);
+            });
+            
+        });
     </script>
 </body>
-<script src="listing.js"></script>
 </html>
