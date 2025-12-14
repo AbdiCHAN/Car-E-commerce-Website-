@@ -41,7 +41,8 @@ color: inherit;
 .homebtn, .homebtn1, .homebtn2, .homebtn3, .homebtn4, .homebtn5, .homebtn6{
     background:#c2a35d;
     font-size:large;
-    color:black
+    color:black;
+    align-items: center;
     
 }
     
