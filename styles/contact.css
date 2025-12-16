@@ -237,3 +237,9 @@ footer p {
     font-size: 2rem;
   }
 }
+
+.car-image{
+  width: 500px;
+  opacity:0.9;
+  length : 200px;
+}
